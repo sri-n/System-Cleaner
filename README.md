@@ -1,4 +1,4 @@
-The System Manager is a modern looking cleaning tool for your pc.
+The System Cleaner is a modern looking cleaning tool for your pc.
 
 #What you can do
 
