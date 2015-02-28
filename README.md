@@ -8,9 +8,18 @@ You can cleanup your disk<br>
 Tools -> Clean Computer
 </pre>
 ###Things You Can Clean
-* Temporary Files
+
+####Windows
+* Temporary Internet Explorer  Files
+#####System
 * Recycle Bin
-* Temporary Internet Files
+* Temporary System Files
+
+####Applications
+#####Chrome
+* Cookies
+* History
+* Temp
 
 ####Cleaning Temporary Internet Files
 With cleaning the temporary internet files you can clean:
