@@ -1,11 +1,18 @@
-﻿<Controls:MetroWindow x:Class="System_Cleaner.Settings"
+﻿<Controls:MetroWindow
                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="System_Cleaner.Settings"
                       Title="Settings"
-                      Height="350"
-                      Width="525" ResizeMode="NoResize">
+                      Height="124.245"
+                      Width="163.052" ResizeMode="NoResize" Loaded="MetroWindow_Loaded">
     <Grid>
+        <Label Content="Language:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="lang" HorizontalAlignment="Left" Margin="24,36,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="English"/>
+            <ComboBoxItem Content="Dutch (Nederlands)"/>
+        </ComboBox>
+        <Button Content="OK" HorizontalAlignment="Left" Margin="80,68,0,0" VerticalAlignment="Top" Width="75" IsDefault="True" Click="Button_Click"/>
 
     </Grid>
 </Controls:MetroWindow>

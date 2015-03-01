@@ -15,6 +15,9 @@ using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
+using System_Cleaner.dialog;
+using System_Cleaner.Properties;
+using System.Media;
 
 namespace System_Cleaner
 {
@@ -23,6 +26,8 @@ namespace System_Cleaner
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
+        public MetroMessageBox mmb;
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -30,7 +35,16 @@ namespace System_Cleaner
 
         private void Tile_Click(object sender, RoutedEventArgs e)
         {
-            if ((MessageBox.Show("Are you sure to empty recycle bin?", "empty", MessageBoxButton.YesNo, MessageBoxImage.Question)) == MessageBoxResult.Yes)
+            if (Properties.Settings.Default.lang == "nl-NL")
+            {
+                mmb = new MetroMessageBox(nl_NL.msgRclBin, "Leegmaken", "YesNo", SystemSounds.Exclamation);
+            }
+            else if (Properties.Settings.Default.lang == "en-EN")
+            {
+                mmb = new MetroMessageBox(en_EN.msgRclBin, "Empty", "YesNo", SystemSounds.Exclamation);
+            }
+
+            if (mmb.ShowDialog() == true)
             {
                 EmptyBin.EmptyBin.SHEmptyRecycleBin(IntPtr.Zero, null, EmptyBin.EmptyBin.RecycleFlags.SHERB_NOCONFIRMATION);
             }
@@ -38,7 +52,16 @@ namespace System_Cleaner
 
         private void Tile_Click_1(object sender, RoutedEventArgs e)
         {
-            if ((MessageBox.Show("This program brings changes in your register, admin rights are required!", "Amdin Rights", MessageBoxButton.OKCancel, MessageBoxImage.Question)) == MessageBoxResult.Cancel)
+            if (Properties.Settings.Default.lang == "nl-NL")
+            {
+                mmb = new MetroMessageBox(nl_NL.msgReg, "Administrator", "OK", SystemSounds.Hand);
+            }
+            else if (Properties.Settings.Default.lang == "en-EN")
+            {
+                mmb = new MetroMessageBox(en_EN.msgReg, "Admin Rights", "OK", SystemSounds.Hand);
+            }
+
+            if (mmb.ShowDialog() == false)
             {
                 
             }
@@ -67,7 +90,16 @@ namespace System_Cleaner
 
         private void Tile_Click_3(object sender, RoutedEventArgs e)
         {
-            if ((MessageBox.Show("The register editor brings changes to your computer and can damage it\n are you sure to continue?", "Sure?", MessageBoxButton.YesNo, MessageBoxImage.Hand)) == MessageBoxResult.Yes)
+            if (Properties.Settings.Default.lang == "nl-NL")
+            {
+                mmb = new MetroMessageBox(nl_NL.msgReg, "Administrator", "OK", SystemSounds.Hand);
+            }
+            else if (Properties.Settings.Default.lang == "en-EN")
+            {
+                mmb = new MetroMessageBox(en_EN.msgReg, "Admin Rights", "OK", SystemSounds.Hand);
+            }
+            
+            if (mmb.ShowDialog() == true)
             {
                 try
                 {

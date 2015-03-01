@@ -24,5 +24,31 @@ namespace System_Cleaner
         {
             InitializeComponent();
         }
+
+        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (Properties.Settings.Default.lang == "nl-NL")
+            {
+                lang.SelectedItem = "Dutch (Nederlands)";
+            }
+            else
+            {
+                lang.SelectedItem = "English";
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (lang.SelectedValue.ToString() == "System.Windows.Controls.ComboBoxItem: Dutch (Nederlands)")
+            {
+                Properties.Settings.Default.lang = "nl-NL";
+                Properties.Settings.Default.Save();
+            }
+            else
+            {
+                Properties.Settings.Default.lang = "en-EN";
+                Properties.Settings.Default.Save();
+            }
+        }
     }
 }
