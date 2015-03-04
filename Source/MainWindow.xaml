@@ -3,7 +3,7 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"     
         xmlns:p="clr-namespace:System_Cleaner.Properties"
-        Title="System Manager" Height="433" Width="525" WindowState="Maximized" Icon="appbar.clean (1).ico">
+        Title="System Manager" Height="433" Width="525" WindowState="Maximized" Icon="appbar.clean (1).ico" Loaded="MetroWindow_Loaded">
     <Grid>
         <Controls:MetroAnimatedTabControl x:Name="matc" Margin="10">
             <TabItem x:Name="t1" Header="Tools">

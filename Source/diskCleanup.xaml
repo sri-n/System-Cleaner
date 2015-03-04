@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Cleanup" Height="390.316" Width="629.368" Icon="appbar.clean (1).ico" ShowInTaskbar="True" WindowStyle="ToolWindow" ResizeMode="NoResize" Loaded="MetroWindow_Loaded">
+        Title="Cleanup" Height="390.316" Width="629.368" Icon="appbar.clean (1).ico" ShowInTaskbar="True" WindowStyle="ToolWindow" ResizeMode="NoResize" Loaded="MetroWindow_Loaded" Closing="MetroWindow_Closing">
     <Grid>
         <Button Content="Start Clean" HorizontalAlignment="Left" Margin="540,328,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         <TextBox x:Name="txtState" HorizontalAlignment="Left" Height="287" Margin="315,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="293" Text="Waiting for actions..." IsReadOnly="True"/>

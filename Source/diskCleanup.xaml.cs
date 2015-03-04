@@ -255,5 +255,10 @@ namespace System_Cleaner
             Properties.Settings.Default.ChrTemp = tglC1.IsChecked.Value;
             Properties.Settings.Default.Save();
         }
+
+        private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            this.DialogResult = true;
+        }
     }
 }

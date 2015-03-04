@@ -33,7 +33,7 @@ namespace System_Cleaner
             InitializeComponent();
         }
 
-        private void Tile_Click(object sender, RoutedEventArgs e)
+        public void Tile_Click(object sender, RoutedEventArgs e)
         {
             if (Properties.Settings.Default.lang == "nl-NL")
             {
@@ -121,6 +121,16 @@ namespace System_Cleaner
             if (s.ShowDialog() == true)
             {
 
+            }
+        }
+
+        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            Arguments a = new Arguments();
+            string[] args = Environment.GetCommandLineArgs();
+            for (int i = 0; i < args.Length; i++)
+            {
+                a.Argument(args[i]);
             }
         }
     }
